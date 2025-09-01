@@ -17,7 +17,7 @@ Ce petit projet comprend aussi la réalisation d'une "étiquette" / "porte clé"
 
 Nous allons utiliser différents outils gratuits :
 - github : pour versionner votre code et hébérger gratuitement votre projet.
-- projectIDX : qui est un IDE (integrated development environment) qui permet d'écrire du code et qui se connecte à github pour hierarchiser les changements dans notre code.
+- Firebase Studio : qui est un IDE (integrated development environment) qui permet d'écrire du code et qui se connecte à github pour hierarchiser les changements dans notre code.
 - nfctools : qui est une application pour android ou iOS et qui nous permettra d'écrire de l'information sur notre sticker RFID.
 
 # Prérequis
@@ -26,7 +26,7 @@ Nous allons utiliser différents outils gratuits :
 - avoir un compte Gmail
 
 - Un ordinateur
-- Un éditeur de code notre outil sera : [projectIDX](https://idx.dev/)
+- Un éditeur de code notre outil sera : [Firebase Studio](https://studio.firebase.google.com)
 - Un navigateur web (Chrome, Firefox ...)
 - Un smartphone avec un navigateur web (Chrome, Firefox ...)
 
@@ -118,39 +118,40 @@ Si vous revenez sur la page d'accueil de votre projet, vous remarquerez au bout 
 Toute l'infrastructure nécessaire pour héberger votre projet est donc bien en place, il suffit maintenant d'ajouter du contenu.
 
 
-# Étape 3 : Utiliser Project IDX
+# Étape 3 : Utiliser Firebase Studio
 
-Rendez-vous sur le site de [projetIDX](https://idx.dev/) et connectez-vous.
+Rendez-vous sur [Firebase Studio](https://studio.firebase.google.com) et connectez-vous.
 
-Importer le dépôt : Utilisez l'option pour importer votre dépôt GitHub dans Project IDX.
+Importer le dépôt : Utilisez l'option pour importer votre dépôt GitHub.
 
 <div align="center"> 
-<img src="ressources/Capture_projetIDX_importRepo.png" alt="import repo in projetIDX" width="75%" />
+<img src="ressources/fbs_home.JPG" alt="import repo in Firebase Studio" width="75%" />
 </div>
 
 Copiez l'adresse du dépot créé précédemment.
 <div align="center"> 
-<img src="ressources/Capture_projetIDX_importRepo2.png" alt="import repo in projetIDX" width="75%" />
+<img src="ressources/fbs_import.JPG" alt="import repo in Firebase Studio" width="75%" />
+<img src="ressources/fbs_import_gh.JPG" alt="import repo in Firebase Studio" width="75%" />
 </div>
 
 Configurer le projet pour un usage de développement web.
 
 - Créer un dossier ".idx":
   <div align="center"> 
-  <img src="ressources/ProjetIDX_newFolder.png" alt="create a new file in project IDX" width="75%" />
+  <img src="ressources/fbs_new_folder.JPG" alt="create a new file in Firebase Studio" width="75%" />
   </div>
 
 - Dans ce dossier, créer un fichier nommé "dev.nix"
   <div align="center"> 
-  <img src="ressources/ProjetIDX_newFile.png" alt="create a new file in project IDX" width="75%" />
+  <img src="ressources/fbs_new_file.JPG" alt="create a new file in Firebase Studio" width="75%" />
   </div>
   Pour arriver à ce résultat :
    <div align="center"> 
-  <img src="ressources/ProjetIDX_comf.png" alt="create a new file in project IDX" width="75%" />
+  <img src="ressources/fbs_dev_nix.JPG" alt="create a new file in Firebase Studio" width="75%" />
   </div>
 
-- Copier le code de configuration de l'environnement de développement dans le fichier "dev.nix" que vous venez de créer. (Ce fichier va nous permettre de tester notre code directement dans projetIDX et aussi de tester sur notre téléphone).
-  ```
+- Copier le code de configuration de l'environnement de développement dans le fichier "dev.nix" que vous venez de créer. (Ce fichier va nous permettre de tester notre code directement dans Firebase Studio et aussi de tester sur notre téléphone).
+  ```nix
     # To learn more about how to use Nix to configure your environment
   # see: https://developers.google.com/idx/guides/customize-idx-env
   { pkgs, ... }: {
@@ -199,18 +200,21 @@ Configurer le projet pour un usage de développement web.
 Votre environnement de travail devrait ressembler à ceci :
    
   <div align="center"> 
-  <img src="ressources/projetIDX_final_conf.png" alt="create a new file in project IDX" width="100%" />
+  <img src="ressources/fbs_filled_nix.JPG" alt="create a new file in Firebase Studio" width="100%" />
   </div>
 
 Il ne vous reste plus qu'à cliquer sur le bouton "Rebuild Environment" et c'est bon !
 
+En theorie Firebase Studio devrait se recharger pour prendre en compte les changements specifies dans le `dev.nix` mais si ce n'est pas le cas, utilisez la palette avec `Ctrl + Shift + P` (`Cmd + Shift + P` sur Mac) et cherchez "rebuild" pour trouver l'option "rebuild environment".
+
+<img src="ressources/fbs_rebuild_env.JPG" alt="rebuild the IDE" width="100%" />
 
 # Étape 4 : Créer la page HTML
 
-Créer un fichier index.html : Dans votre projet IDX, créez un fichier nommé **"index.html"**.
+Créer un fichier index.html : Dans votre Firebase Studio, créez un fichier nommé **"index.html"**.
 
 <div align="center"> 
-<img src="ressources/Capture_projetIDX_newFile.png" alt="create a new file in project IDX" width="75%" />
+<img src="ressources/fbs_create_html.JPG" alt="create a new file in Firebase Studio" width="75%" />
 </div>
 
 
@@ -406,21 +410,17 @@ En résumé, ce code crée une expérience de RA où un texte apparaît dans un 
 
 - Tester votre projet : Affichez la webview de votre projet.
 
-  <div align="center"> 
-  <img src="ressources/Capture_projetIDX_webview.png" alt="check the webview tab !" width="75%" />
-  </div>
-
-  **☣️** Il peut arriver que la webview disparaisse ... Dans ce cas là vous pouvez faire apparaitre la "palette de commande" en (Cmd+Maj+P sur Mac ou Ctrl+Maj+P pour les autres systèmes), puis sélectionnez ou tappez "Show Web Preview" (Afficher l'aperçu sur le Web).
+  Pour ouvrir la preview de votre app, cherchez "web" dans la palette pour trouver "Show Web Preview". (rappel: la palette c'est `Ctrl/Cmd + Shift + P`).
 
 
   <div align="center"> 
-  <img src="ressources/Capture_projetIDX_webview_commandPalette.png" alt="command palette" width="75%" />
+  <img src="ressources/fbs_show_web.JPG" alt="command palette" width="100%" />
   </div>
 
   Vous pouvez alors visionner votre page en plein écran en cliquant sur le petit icône en haut à droite.
 
   <div align="center"> 
-  <img src="ressources/Capture_projetIDX_webview_ouvrir.png" alt="command palette" width="75%" />
+  <img src="ressources/fbs_open_full.JPG" alt="command palette" width="75%" />
   </div>
 
   Cela ouvrira votre expérience dans un nouvel onglet sur votre ordinateur. A ce stade vous devriez voir : une page web vous montrant vous !
@@ -438,7 +438,7 @@ En résumé, ce code crée une expérience de RA où un texte apparaît dans un 
   Pour cela vous pouvez cliquer sur l'icône "lien" en haut à droite à côté de l'icône pour ouvrir dans une nouvelle fenêtre. Scannez le qr code et vous voilà avec la page chargée sur votre téléphone.
 
   <div align="center"> 
-  <img src="ressources/Capture_projetIDX_qr1.png" alt="command palette" width="75%" />
+  <img src="ressources/fbs_qr_of_page.JPG" alt="command palette" width="75%" />
   </div>
 
   
@@ -450,26 +450,26 @@ Essayer par exemple de changer le texte, sa couleur, sa taille, sa position etc.
 
 # Étape 7 : Publier l'application
 
-Commiter les modifications : Utilisez les outils de versioning de Project IDX pour commiter vos changements et les pousser sur votre dépôt GitHub.
+Commiter les modifications : Utilisez les outils de versioning de Firebase Studio pour commiter vos changements et les pousser sur votre dépôt GitHub.
 
-- Cliquer sur le bouton source control de projetIDX
+- Cliquer sur le bouton source control de Firebase Studio
   <div align="center"> 
-  <img src="ressources/Capture_git_icon.png" alt="" width="10%" />
+  <img src="ressources/fbs_git.JPG" alt="" width="10%" />
   </div>
 
 - 'Stager' les changements en cliquant sur le "+"
   <div align="center"> 
-  <img src="ressources/Capture_git_stage.png" alt="" width="75%"/>
+  <img src="ressources/fbs_stage_all.JPG" alt="" width="75%"/>
   </div>
 
 - 'Commiter' les changements en cliquant sur le bouton 'commit'
   <div align="center"> 
-  <img src="ressources/Capture_git_commit.png" alt=" " width="75%"/>
+  <img src="ressources/fbs_commit.JPG" alt=" " width="75%"/>
   </div>
 
 - Synchroniser les changements en cliquant sur le bouton 'commit'
   <div align="center"> 
-  <img src="ressources/Capture_git_sync.png" alt=" " width="75%"/>
+  <img src="ressources/fbs_publish.JPG" alt=" " width="75%"/>
   </div>
 
 Cette dernière opération va envoyer vos changements à votre dépot github et du coup mettre à jour la page mise en ligne.
