@@ -242,7 +242,7 @@ Ajouter le code HTML : Copiez et collez le code HTML suivant dans votre fichier 
     sourceWidth="800" sourceHeight="600" displayWidth="1280" displayHeight="720">
 
       
-        <a-marker type='barcode' value='2'>
+        <a-marker type='barcode' value='0'>
    
             <a-text value="Hello !" 
             side="double" position = "0 0 -1" rotation="270 0 0" 
