@@ -372,7 +372,7 @@ Dans la partie ```<body>```, et c'est ici que tout ce joue pour le contenu visib
 
 - Le *marqueur* : L'élément ```<a-marker>``` définit un marqueur de type code-barres avec la valeur '2'. Lorsque la caméra détecte ce marqueur, le contenu à l'intérieur de la balise sera affiché en RA.
   ```html
-  <a-marker type='barcode' value='2'>
+  <a-marker type='barcode' value='0'>
     <!-- ajouter du contenu qui sera visible par l'utilisateur et donc ancré sur notre marqueur -->
   </a-marker>
   ```
