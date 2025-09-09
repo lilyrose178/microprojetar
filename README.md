@@ -496,7 +496,7 @@ Pour cela nous allons utiliser NFCTools qui est gratuit et qui est disponible po
   </div>
 - Entrer l'adresse de votre page puis valider
   <div align="center"> 
-  <img src="ressources/NFCTools_url.png" alt=" " width="75%"/>
+  <img src="ressources/NFCTools_url+gh_pages.png" alt=" " width="75%"/>
   </div>
 - Vous pouvez maintenant cliquer sur le bouton "Ecrire" sous le champ "Plus d'options"
   <div align="center"> 
