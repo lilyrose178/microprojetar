@@ -1,42 +1,42 @@
 # Introduction
-Dans ce tutoriel, nous allons vous guider pas à pas dans la création d'une application web en réalité augmentée (AR) simple. 
+In this tutorial, we will guide you step by step in creating a simple augmented reality (AR) web application.
 
 https://github.com/user-attachments/assets/f4b1f979-b22c-443c-ae03-740b0111a7f0
 
-L'objectif est de voir ensemble toute la chaine technique qui permet à un projet d'exister en tant que page web. Nous verrons aussi comment écrire des informations sur des puces RFID.
+The goal is to see together the entire technical chain that allows a project to exist as a web page. We will also see how to write information on RFID chips.
 
-Nous utiliserons A-Frame, un framework web open-source pour créer des expériences VR/AR, et AR.js, une bibliothèque JavaScript qui permet d'intégrer des fonctionnalités AR dans les applications web. 
+We will use A-Frame, an open-source web framework for creating VR/AR experiences, and AR.js, a JavaScript library that allows integrating AR functionalities into web applications.
 
-Notre objectif sera d'afficher le texte "Hello" sur un marqueur AR de type code-barres. Puis de customiser le contenu.
+Our objective will be to display the text "Hello" on a barcode-type AR marker. Then customize the content.
 
-Ce petit projet comprend aussi la réalisation d'une "étiquette" / "porte clé".
+This small project also includes the creation of a "tag" / "keychain".
 <div align="center">
-  <img src="ressources/markup_1000019121.png" alt="text disaplyed in ar" width="45%" height="400"/>
+  <img src="ressources/markup_1000019121.png" alt="text displayed in ar" width="45%" height="400"/>
   <img src="ressources/markup_1000019122.png" alt="3d model displayed in ar" width="45%" height="400"/>
 </div>
 
-Nous allons utiliser différents outils gratuits :
-- github : pour versionner votre code et hébérger gratuitement votre projet.
-- Firebase Studio : qui est un IDE (integrated development environment) qui permet d'écrire du code et qui se connecte à github pour hierarchiser les changements dans notre code.
-- nfctools : qui est une application pour android ou iOS et qui nous permettra d'écrire de l'information sur notre sticker RFID.
+We will use different free tools:
+- github: to version your code and host your project for free.
+- Firebase Studio: which is an IDE (integrated development environment) that allows writing code and connects to github to organize changes in our code.
+- nfctools: which is an application for android or iOS that will allow us to write information on our RFID sticker.
 
-# Prérequis
+# Prerequisites
 
-- avoir un compte Github
-- avoir un compte Gmail
+- have a Github account
+- have a Gmail account
 
-- Un ordinateur
-- Un éditeur de code notre outil sera : [Firebase Studio](https://studio.firebase.google.com)
-- Un navigateur web (Chrome, Firefox ...)
-- Un smartphone avec un navigateur web (Chrome, Firefox ...)
+- A computer
+- A code editor our tool will be: [Firebase Studio](https://studio.firebase.google.com)
+- A web browser (Chrome, Firefox ...)
+- A smartphone with a web browser (Chrome, Firefox ...)
 
 
 
-# Matériel à votre disposition
-- un petit carré de carton bois aux bords arrondis
-- un sticker découpé sur vinyle mat
-- un petit cordon métallique avec une attache
-- une petite puce RFID
+# Materials at your disposal
+- a small rounded-edge wooden cardboard square
+- a sticker cut on matte vinyl
+- a small metal cord with a clasp
+- a small RFID chip
 
 <div align="center"> 
   <img src="ressources/PXL_20240912_065600761.jpg" alt="photo of all the elements" width="75%" />
@@ -45,36 +45,36 @@ Nous allons utiliser différents outils gratuits :
 
 
 
-Pour l'assemblage, rien de plus simple :
-- coller le sticker sur le carré en carton bois sur l'emplacement délimité par la gravure.
-- coller la puce RFID, centrée, au dos de ce carré.
-- dévisser l'attache et faite la passer dans le trou.
+For assembly, nothing could be simpler:
+- stick the sticker on the wooden cardboard square on the location marked by the engraving.
+- stick the RFID chip, centered, on the back of this square.
+- unscrew the clasp and pass it through the hole.
 
-et voilà ! on est prêts à passer sur la partie numérique !
+and there you go! we're ready to move on to the digital part!
 
-Si vous voulez plus d'infos sur cette partie là
-- [Explications de la découpe stickers](https://github.com/LucieMrc/SilhouetteCameo_2spi)
-- [Explications sur la découpe laser](https://github.com/b2renger/Introduction_Laser_Beambox)
+If you want more info on this part:
+- [Sticker cutting explanations](https://github.com/LucieMrc/SilhouetteCameo_2spi)
+- [Laser cutting explanations](https://github.com/b2renger/Introduction_Laser_Beambox)
 
 
-📽️Speedrun video : 
-- ce tuto parait long ...
-- en vrai non, ça prend moins de 10 minutes !
+📽️Speedrun video: 
+- this tutorial seems long...
+- actually no, it takes less than 10 minutes!
   
 https://github.com/user-attachments/assets/0d7ed300-bff6-4171-a3a7-28d8e4be6978 
 
 
-# Étape 1 : Créer un compte GitHub et un dépôt
-- Créer un compte GitHub : Si vous n'en avez pas déjà un, rendez-vous sur https://github.com/signup?source=login et créez un compte.
+# Step 1: Create a GitHub account and repository
+- Create a GitHub account: If you don't already have one, go to https://github.com/signup?source=login and create an account.
 
-**☢️ Le nom d'utilisateur que vous choisissez sera utilisé pour l'adresse qu'il faudra tapper pour voir votre projet. <u>Choisissez un nom court ! sans espaces, sans caractères spéciaux (accents, cédille, etc.)</u>**
+**☢️ The username you choose will be used for the address you'll need to type to see your project. <u>Choose a short name! without spaces, without special characters (accents, cedilla, etc.)</u>**
 
 <div align="center"> 
   <img src="ressources/Capture_signup_github.png" alt="signup github page" width="49%" height="400"/>
   <img src="ressources/Capture_login_github.png" alt="login github page" width="49%" height="400"/>
 </div>
 
-- Créer un nouveau dépôt : Une fois connecté, cliquez sur le bouton "New repository". Donnez un nom à votre dépôt (par exemple, "microProjetAr"), ajoutez une description facultative, et cliquez sur "Create repository".
+- Create a new repository: Once logged in, click on the "New repository" button. Give your repository a name (for example, "microProjetAr"), add an optional description, and click "Create repository".
 
 <div align="center"> 
 <img src="ressources/Capture_github_newRepo.png" alt="menu to create new repo" width="75%" />
@@ -86,13 +86,13 @@ https://github.com/user-attachments/assets/0d7ed300-bff6-4171-a3a7-28d8e4be6978
 
 
 
-# Étape 2 : Activer GitHub Pages
-Nous allons maintenant configurer GitHub Pages, pour permettre à notre projet d'être servi par les serveurs de github lorsque l'on rentre l'adresse : 
+# Step 2: Enable GitHub Pages
+We will now configure GitHub Pages, to allow our project to be served by github servers when we enter the address: 
 
- https://*[votre-nom-utilisateur]*.github.io/*[votre-depot]*
+ https://*[your-username]*.github.io/*[your-repository]*
 
 
-- Accéder aux paramètres : Dans votre dépôt, cliquez sur l'onglet "Settings", puis sur l'onglet "Pages"
+- Access settings: In your repository, click on the "Settings" tab, then on the "Pages" tab
 
 <div align="center"> 
 <img src="ressources/Capture_github_settings.png" alt="menu to access gh-pages settings" width="75%" />
@@ -102,55 +102,55 @@ Nous allons maintenant configurer GitHub Pages, pour permettre à notre projet d
 <img src="ressources/Capture_github_settings_pages.png" alt="Pages menu to access gh-pages settings" width="75%" />
 </div>
 
-- Sélectionner la branche : Dans la section "GitHub Pages", sélectionnez la branche "main" (ou la branche principale de votre dépôt).
-- Enregistrer les modifications : Cliquez sur le bouton "Save". Votre site GitHub Pages sera maintenant accessible à l'adresse https://[votre-nom-utilisateur].github.io/[microprojetAr].
+- Select the branch: In the "GitHub Pages" section, select the "main" branch (or the main branch of your repository).
+- Save changes: Click the "Save" button. Your GitHub Pages site will now be accessible at https://[your-username].github.io/[microprojetAr].
 
 <div align="center"> 
 <img src="ressources/Capture_github_settings_pages_activate.png" alt="activate gh-pages" width="75%" />
 </div>
 
-Si vous revenez sur la page d'accueil de votre projet, vous remarquerez au bout de quelques minutes, que certains éléments ont changés. Un déploiement est maintenant disponible !
+If you return to your project's home page, you will notice after a few minutes that some elements have changed. A deployment is now available!
 
 <div align="center"> 
 <img src="ressources/Capture_github_settings_pages_done.png" alt="gh-pages settings done" width="75%" />
 </div>
 
-Toute l'infrastructure nécessaire pour héberger votre projet est donc bien en place, il suffit maintenant d'ajouter du contenu.
+All the infrastructure necessary to host your project is therefore in place, now you just need to add content.
 
 
-# Étape 3 : Utiliser Firebase Studio
+# Step 3: Use Firebase Studio
 
-Rendez-vous sur [Firebase Studio](https://studio.firebase.google.com) et connectez-vous.
+Go to [Firebase Studio](https://studio.firebase.google.com) and log in.
 
-Importer le dépôt : Utilisez l'option pour importer votre dépôt GitHub.
+Import the repository: Use the option to import your GitHub repository.
 
 <div align="center"> 
 <img src="ressources/fbs_home.JPG" alt="import repo in Firebase Studio" width="75%" />
 </div>
 
-Copiez l'adresse du dépot créé précédemment.
+Copy the address of the repository created previously.
 <div align="center"> 
 <img src="ressources/fbs_import.JPG" alt="import repo in Firebase Studio" width="75%" />
 <img src="ressources/fbs_import_gh.JPG" alt="import repo in Firebase Studio" width="75%" />
 </div>
 
-Configurer le projet pour un usage de développement web.
+Configure the project for web development use.
 
-- Créer un dossier ".idx":
+- Create a ".idx" folder:
   <div align="center"> 
   <img src="ressources/fbs_new_folder.JPG" alt="create a new file in Firebase Studio" width="75%" />
   </div>
 
-- Dans ce dossier, créer un fichier nommé "dev.nix"
+- In this folder, create a file named "dev.nix"
   <div align="center"> 
   <img src="ressources/fbs_new_file.JPG" alt="create a new file in Firebase Studio" width="75%" />
   </div>
-  Pour arriver à ce résultat :
+  To achieve this result:
    <div align="center"> 
   <img src="ressources/fbs_dev_nix.JPG" alt="create a new file in Firebase Studio" width="75%" />
   </div>
 
-- Copier le code de configuration de l'environnement de développement dans le fichier "dev.nix" que vous venez de créer. (Ce fichier va nous permettre de tester notre code directement dans Firebase Studio et aussi de tester sur notre téléphone).
+- Copy the development environment configuration code into the "dev.nix" file you just created. (This file will allow us to test our code directly in Firebase Studio and also test on our phone).
   ```nix
     # To learn more about how to use Nix to configure your environment
   # see: https://developers.google.com/idx/guides/customize-idx-env
@@ -197,35 +197,35 @@ Configurer le projet pour un usage de développement web.
     };
   }
   ```
-Votre environnement de travail devrait ressembler à ceci :
+Your work environment should look like this:
    
   <div align="center"> 
   <img src="ressources/fbs_filled_nix.JPG" alt="create a new file in Firebase Studio" width="100%" />
   </div>
 
-Il ne vous reste plus qu'à cliquer sur le bouton "Rebuild Environment" et c'est bon !
+All you have to do is click the "Rebuild Environment" button and you're good to go!
 
-En theorie Firebase Studio devrait se recharger pour prendre en compte les changements specifies dans le `dev.nix` mais si ce n'est pas le cas, utilisez la palette avec `Ctrl + Shift + P` (`Cmd + Shift + P` sur Mac) et cherchez "rebuild" pour trouver l'option "rebuild environment".
+In theory Firebase Studio should reload to take into account the changes specified in the `dev.nix` but if this is not the case, use the palette with `Ctrl + Shift + P` (`Cmd + Shift + P` on Mac) and search for "rebuild" to find the "rebuild environment" option.
 
 <img src="ressources/fbs_rebuild_env.JPG" alt="rebuild the IDE" width="100%" />
 
-# Étape 4 : Créer la page HTML
+# Step 4: Create the HTML page
 
-Créer un fichier index.html : Dans votre Firebase Studio, créez un fichier nommé **"index.html"**.
+Create an index.html file: In your Firebase Studio, create a file named **"index.html"**.
 
 <div align="center"> 
 <img src="ressources/fbs_create_html.JPG" alt="create a new file in Firebase Studio" width="75%" />
 </div>
 
 
-Ajouter le code HTML : Copiez et collez le code HTML suivant dans votre fichier index.html :
+Add the HTML code: Copy and paste the following HTML code into your index.html file:
 
 ```HTML
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Ma première app AR</title>
+  <title>My first AR app</title>
   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> 
 </head>
@@ -259,65 +259,65 @@ Ajouter le code HTML : Copiez et collez le code HTML suivant dans votre fichier 
 ```
 
 
-# Étape 5 : Comprendre le code
-Ce code créer une expérience simple de réalité augmentée (RA) en utilisant A-Frame et AR.js. Décomposons ce que fait chaque partie :
+# Step 5: Understanding the code
+This code creates a simple augmented reality (AR) experience using A-Frame and AR.js. Let's break down what each part does:
 
-Si vous n'êtes pas à l'aise et ne connaissez pas du tout la manière dont du code html fonctionne cliquez sur le petit triangle pour déplier une explication des bases de la syntaxe html
+If you're not comfortable and don't know at all how HTML code works, click on the little triangle to unfold an explanation of HTML syntax basics
 
-<details > <summary> <b>&#128161 les bases html</b> </summary>
+<details > <summary> <b>&#128161 HTML basics</b> </summary>
 
-Une page HTML est comme un sandwich. Elle a besoin d'un pain du haut et d'un pain du bas pour contenir la garniture !
+An HTML page is like a sandwich. It needs top bread and bottom bread to contain the filling!
 
-Le pain du haut et du bas, ce sont les balises ```<html>``` et ```</html>```. Elles indiquent au navigateur que le contenu entre ces balises est du code HTML.
+The top and bottom bread are the ```<html>``` and ```</html>``` tags. They tell the browser that the content between these tags is HTML code.
 
-Deux parties principales : À l'intérieur du "sandwich HTML", on trouve deux parties :
+Two main parts: Inside the "HTML sandwich", we find two parts:
 
-**La tête** (```<head>``` et ```</head>```) : C'est comme les informations sur l'emballage du sandwich. On y met des informations importantes pour le navigateur, mais qui ne sont pas affichées directement à l'utilisateur. 
+**The head** (```<head>``` and ```</head>```): It's like the information on the sandwich packaging. We put important information for the browser there, but which is not displayed directly to the user.
 
-Par exemple :
-- Le titre de la page ```<title>``` qui décrit au navigateur quoi afficher dans la barre d'onglets.
+For example:
+- The page title ```<title>``` which describes to the browser what to display in the tab bar.
 
-- Des liens vers des fichiers CSS pour charger la mise en page
+- Links to CSS files to load the layout
 
-- Des liens vers des fichiers JavaScript pour les fonctionnalités interactives
+- Links to JavaScript files for interactive functionalities
 
-**Le corps** (```<body>``` et ```</body>```) : C'est la garniture du sandwich ! C'est le contenu visible de la page web : texte, images, vidéos, etc.
+**The body** (```<body>``` and ```</body>```): It's the sandwich filling! It's the visible content of the web page: text, images, videos, etc.
 
-La syntaxe et donc l'interprétation par le navigateur du code html repose sur des balises ouvrantes et fermantes :
+The syntax and therefore the interpretation by the browser of html code is based on opening and closing tags:
 
-- La balise **ouvrante** (par exemple ```<p>```)  dit au navigateur : "Attention, on commence un paragraphe !"
-- La balise fermante (par exemple ```</p>```) dit : "Voilà, le paragraphe est terminé."
+- The **opening** tag (for example ```<p>```) tells the browser: "Attention, we're starting a paragraph!"
+- The closing tag (for example ```</p>```) says: "There, the paragraph is finished."
 
-Tout le contenu entre la balise ouvrante et la balise fermante est considéré comme faisant partie de cet élément.
+All content between the opening tag and the closing tag is considered part of this element.
 
-Exemple :
+Example:
 ```html
 <html>
 <head>
-  <title>Ma page web</title>
+  <title>My web page</title>
 </head>
 <body>
-  <h1>Bienvenue !</h1>
-  <p>Ceci est un paragraphe de texte.</p>
+  <h1>Welcome!</h1>
+  <p>This is a text paragraph.</p>
 </body>
 </html>
 ```
-Dans cet exemple :
+In this example:
 
-- ```<html>``` ouvre la page HTML et ```</html>``` la ferme.
-- ```<head>``` ouvre la section d'en-tête et ```</head>``` la ferme.
-- ```<title>``` ouvre le titre de la page et ```</title>``` le ferme.
-- ```<body>``` ouvre le corps de la page et ```</body>``` le ferme.
-- ```<h1>``` ouvre un titre de niveau 1 et ```</h1>``` le ferme.
-- ```<p>``` ouvre un paragraphe et ```</p>``` le ferme.
+- ```<html>``` opens the HTML page and ```</html>``` closes it.
+- ```<head>``` opens the header section and ```</head>``` closes it.
+- ```<title>``` opens the page title and ```</title>``` closes it.
+- ```<body>``` opens the page body and ```</body>``` closes it.
+- ```<h1>``` opens a level 1 title and ```</h1>``` closes it.
+- ```<p>``` opens a paragraph and ```</p>``` closes it.
 
 </details>
 </br>
 
-Ici nous avons une structure HTML classique : Le code met en place une page HTML basique avec les sections <head> et <body>.
+Here we have a classic HTML structure: The code sets up a basic HTML page with <head> and <body> sections.
 
 
-Dans la partie ```<head>```, nous ajoutons : 
+In the ```<head>``` part, we add: 
 
 - le titre de l'expérience
   ```html
