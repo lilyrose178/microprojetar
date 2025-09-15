@@ -81,7 +81,7 @@ https://github.com/user-attachments/assets/0d7ed300-bff6-4171-a3a7-28d8e4be6978
 </div>
 </br>
 <div align="center"> 
-<img src="ressources/Capture_github_newRepoCreation.png" alt="menu to create new repo" width="75%" />
+<img src="ressources/Capture_github_newRepoCreation..png " alt="menu to create new repo" width="75%" />
 </div>
 
 
