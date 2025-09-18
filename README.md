@@ -122,6 +122,27 @@ Toute l'infrastructure nécessaire pour héberger votre projet est donc bien en 
 
 Rendez-vous sur [Firebase Studio](https://studio.firebase.google.com) et connectez-vous.
 
+<blockquote id="parental">
+<details>
+<summary>Problème de contrôle parental? Ou de restriction d'âge?</summary>
+
+<img src="ressources/parental_1.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_2.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_3.png" alt="import repo in Firebase Studio" loading="lazy" />
+
+Et à partir de celle-la, il faut revenir en arrière (mais c'est important de visiter cette page)
+
+<img src="ressources/parental_4.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_5.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_6.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_7.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_8.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_9.png" alt="import repo in Firebase Studio" loading="lazy" />
+<img src="ressources/parental_10.png" alt="import repo in Firebase Studio" loading="lazy" />
+
+</details>
+</blockquote>
+
 Importer le dépôt : Utilisez l'option pour importer votre dépôt GitHub.
 
 <div align="center"> 
