@@ -74,7 +74,11 @@ https://github.com/user-attachments/assets/0d7ed300-bff6-4171-a3a7-28d8e4be6978
   <img src="ressources/Capture_login_github.png" alt="login github page" width="49%" height="400"/>
 </div>
 
-- Créer un nouveau dépôt : Une fois connecté, cliquez sur le bouton "New repository". Donnez un nom à votre dépôt (par exemple, "microProjetAr"), ajoutez une description facultative, et cliquez sur "Create repository".
+- Créer un nouveau dépôt : Une fois connecté, cliquez sur le bouton "New repository". 
+- Donnez un nom à votre dépôt (par exemple, "microProjetAr"),
+- (Ajoutez une description facultative), 
+- **Activer** l'option Add README.
+- et cliquez sur "Create repository".
 
 <div align="center"> 
 <img src="ressources/Capture_github_newRepo.png" alt="menu to create new repo" width="75%" />
@@ -172,6 +176,7 @@ Configurer le projet pour un usage de développement web.
   </div>
 
 - Copier le code de configuration de l'environnement de développement dans le fichier "dev.nix" que vous venez de créer. (Ce fichier va nous permettre de tester notre code directement dans Firebase Studio et aussi de tester sur notre téléphone).
+
   ```nix
     # To learn more about how to use Nix to configure your environment
   # see: https://developers.google.com/idx/guides/customize-idx-env
@@ -483,6 +488,8 @@ Commiter les modifications : Utilisez les outils de versioning de Firebase Studi
   <img src="ressources/fbs_stage_all.JPG" alt="" width="75%"/>
   </div>
 
+- **Ajouter un message expliquant les changements**
+! c'est obligatoire !
 - 'Commiter' les changements en cliquant sur le bouton 'commit'
   <div align="center"> 
   <img src="ressources/fbs_commit.JPG" alt=" " width="75%"/>
