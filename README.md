@@ -500,6 +500,16 @@ Commiter les modifications : Utilisez les outils de versioning de Firebase Studi
   <img src="ressources/fbs_publish.JPG" alt=" " width="75%"/>
   </div>
 
+<div align="center"> 
+  <img src="ressources/gh_oauth1.JPG" alt=" " width="75%"/>
+  <img src="ressources/gh_oauth2.JPG" alt=" " width="75%"/>
+  <img src="ressources/gh_oauth3.JPG" alt=" " width="75%"/>
+  <img src="ressources/gh_oauth4.JPG" alt=" " width="75%"/>
+  <img src="ressources/gh_oauth5.JPG" alt=" " width="75%"/>
+  <img src="ressources/gh_oauth6.JPG" alt=" " width="75%"/>
+  <img src="ressources/gh_oauth6.JPG" alt=" " width="75%"/>
+</div>
+
 Cette dernière opération va envoyer vos changements à votre dépot github et du coup mettre à jour la page mise en ligne.
 
 **Votre expérience est maintenant déployée à l'adresse :** *https://[votre-nom-utilisateur].github.io/[votre-depot]*
