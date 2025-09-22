@@ -21,12 +21,34 @@
         smooth=" true" smoothCount="5" smoothTolerance=".05" smoothThreshold="5" sourceWidth="800" sourceHeight="600"
         displayWidth="1280" displayHeight="720">
 
+        <a-assets>
+            <img id="image" src="./saul bass.jpg" > 
+        </a-assets>
 
+        <a-marker type='barcode' value='35'>
 
-        <a-marker type='barcode' value='0'>
-            <a-text value="Hello !" side="double" position="0 0 -1" rotation="270 0 0" width="8" color="red"
+            <a-image src="#image"
+            rotation="270 0 0"
+            width="2"
+            height="2"></a-image>
+
+            <a-text value="Mystere" side="double" position="3 0 -1" rotation="270 0 0" width="8" color="red"
                 align="center">
             </a-text>
+            <a-text value="Etrange" side="double" position="-3 0 1" rotation="270 0 0" width="8" color="red"
+            align="center">
+        </a-text>
+        <a-text value="Temps suspendu" side="double" position="3 0 -3" rotation="270 0 0" width="8" color="red"
+        align="center">
+    </a-text>
+    <a-text value="Hypnotisant" side="double" position="1 0 -1" rotation="270 0 0" width="8" color="red"
+    align="center">
+</a-text>
+<a-text value="lointain" side="double" position="-1 0 2" rotation="270 0 0" width="8" color="red"
+align="center">
+
+
+
         </a-marker>
 
         <a-entity camera></a-entity>
